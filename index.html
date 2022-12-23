@@ -10,9 +10,22 @@
 		<h1>AutoSolve_DB</h1>
 		<p>Este es un programa para probar las bases de datos con dynamo</p>
 		<div>
-			<button type="button" id="boton" }>Put item</button>
+			<button type="button" id="boton">Put item</button>
 		</div>
 	</body>
-	<script type="commonjs" src="./script/client.js"></script>
-	<script type="commonjs" src="./script/insertData.js"></script>
+	<!-- <script type="commonjs" src="./script/client.js"></script>
+	<script type="commonjs" src="./script/insertData.js"></script> -->
+	<script type="module">
+		import { ddbDocClient } from "./script/client.js";
+	</script>
+
+	<script type="module">
+		import { putItem } from "./script/insertData.js";
+		window.onload = () => {
+			console.log("Hello World");
+			document
+				.getElementById("boton")
+				.addEventListener("click", putItem());
+		};
+	</script>
 </html>

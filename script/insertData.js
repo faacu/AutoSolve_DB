@@ -1,7 +1,7 @@
-// import { PutCommand } from "@aws-sdk/lib-dynamodb";
-// import { ddbDocClient } from "./client.js";
-const { PutCommand } = require("@aws-sdk/lib-dynamodb");
-const { ddbDocClient } = require("./client.js");
+import { PutCommand } from "@aws-sdk/lib-dynamodb";
+import { ddbDocClient } from "./client.js";
+// const { PutCommand } = require("@aws-sdk/lib-dynamodb");
+// const { ddbDocClient } = require("./client.js");
 
 export const putItem = async () => {
 	const params = {
@@ -18,8 +18,4 @@ export const putItem = async () => {
 	} catch (err) {
 		console.log("Error", err.stack);
 	}
-};
-window.onload = () => {
-	console.log("Hello World");
-	document.getElementById("boton").addEventListener("click", putItem);
 };
